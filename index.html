@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Autores e Livro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Cadastro e Edição do Livro</h1>
+  </header>
+
+  <section id="cadastro">
+    <h2>Registrar Autor</h2>
+    <form id="formCadastro">
+      <input type="text" id="nome" placeholder="Nome Completo" required />
+      <input type="email" id="email" placeholder="E-mail" required />
+      <textarea id="biografia" placeholder="Biografia" required></textarea>
+      <button type="submit">Cadastrar Autor</button>
+    </form>
+  </section>
+
+  <section id="atribuir-texto">
+    <h2>Atribuição de Autores aos Textos</h2>
+    <div>
+      <h3>Capítulos e Seções</h3>
+      <button id="adicionarCapitulo">Adicionar Capítulo</button>
+      <div id="capitulosContainer"></div>
+    </div>
+
+    <div>
+      <h3>Atribuir Autor a Seção</h3>
+      <select id="autorSelect"></select>
+      <select id="textoSelect"></select>
+      <button id="atribuirAutor">Atribuir Autor</button>
+    </div>
+
+    <div id="responsabilidadeAutores">
+      <h3>Responsabilidade dos Autores</h3>
+      <ul id="listaResponsabilidade"></ul>
+    </div>
+  </section>
+
+  <section id="edicao-livro">
+    <h2>Edição do Livro</h2>
+    <div>
+      <h3>Texto</h3>
+      <textarea id="editorTexto" placeholder="Escreva o conteúdo do capítulo aqui..." rows="10"></textarea>
+      <button id="formatarNegrito">Negrito</button>
+      <button id="formatarItalico">Itálico</button>
+      <button id="formatarLista">Lista</button>
+      <button id="desfazerAlteracoes">Desfazer</button>
+      <button id="refazerAlteracoes">Refazer</button>
+    </div>
+
+    <button id="visualizarLivro">Visualizar Livro</button>
+    <button id="exportarLivro">Exportar para PDF</button>
+  </section>
+
+  <section id="progresso-autores">
+    <h2>Progresso dos Autores</h2>
+    <div id="progressoLista"></div>
+  </section>
+
+  <section id="historico-edicoes">
+    <h2>Histórico de Edições</h2>
+    <ul id="historicoLista"></ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
